@@ -24,11 +24,13 @@ project "ImGui"
 	filter "system:windows"
 		systemversion "latest"
 		cppdialect "C++17"
+		defines { "IMGUI_API=__declspec(dllexport)" }
 
 	filter "system:linux"
 		pic "On"
 		systemversion "latest"
 		cppdialect "C++17"
+		defines { "IMGUI_API=__declspec(dllexport)" }
 
 	filter "configurations:Debug"
 		runtime "Debug"

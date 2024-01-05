@@ -13,7 +13,6 @@ project "ImGui"
 		"imgui.cpp",
 		"imgui_draw.cpp",
 		"imgui_internal.h",
-		"imgui_tables.cpp",
 		"imgui_widgets.cpp",
 		"imstb_rectpack.h",
 		"imstb_textedit.h",
@@ -24,13 +23,11 @@ project "ImGui"
 	filter "system:windows"
 		systemversion "latest"
 		cppdialect "C++17"
-		defines { "IMGUI_API=__declspec(dllexport)" }
 
 	filter "system:linux"
 		pic "On"
 		systemversion "latest"
 		cppdialect "C++17"
-		defines { "IMGUI_API=__declspec(dllexport)" }
 
 	filter "configurations:Debug"
 		runtime "Debug"
@@ -39,8 +36,3 @@ project "ImGui"
 	filter "configurations:Release"
 		runtime "Release"
 		optimize "on"
-
-    filter "configurations:Dist"
-		runtime "Release"
-		optimize "on"
-        symbols "off"
